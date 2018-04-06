@@ -29,7 +29,6 @@ class ReunionTest < Minitest::Test
     activity = Activity.new("hiking")
 
     reunion.add_activity(activity)
-
     assert_equal "hiking", reunion.activities.first.activity_name
   end
 end
