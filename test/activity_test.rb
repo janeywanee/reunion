@@ -27,7 +27,28 @@ class ActivityTest < Minitest::Test
     activity = Activity.new("hiking")
 
     activity.add_participant({"Jane" => 10})
+
     assert_equal [{"Jane" => 10}], activity.participants
+  end
+
+  def test_it_can_add_more_than_one_participant
+    activity = Activity.new("hiking")
+
+    activity.add_participant({"Jane" => 10})
+    activity.add_participant({"Justine" => 10})
+
+    assert_equal [{"Jane" => 10}, {"Justine" => 10}], activity.participants
+  end
+
+  def test_it_can_evaluate_the_total_cost_of_an_activity
+    activity = Activity.new("hiking")
+
+    activity.add_participant({"Jane" => 10})
+    activity.add_participant({"Justine" => 10})
+    activity.add_participant({"Sabrina" => 10})
+    activity.add_participant({"Jerrel" => 10})
+
+    assert_equal 40, activity.total_cost
   end
 
 end
