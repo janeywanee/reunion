@@ -55,11 +55,19 @@ class ActivityTest < Minitest::Test
     activity = Activity.new("hiking")
 
     activity.add_participant({"Jane" => 10})
-    activity.add_participant({"Justine" => 10})
+    activity.add_participant({"Justine" => 20})
     activity.add_participant({"Sabrina" => 10})
-    activity.add_participant({"Jerrel" => 10})
+    activity.add_participant({"Jerrel" => 20})
 
-    assert_equal 10, activity.split_cost_evenly
+    assert_equal 15, activity.split_cost_evenly
   end
 
+  def test_it_can_evaluate_how_much_someone_owes
+    activity = Activity.new("hiking")
+
+    activity.add_participant({"Jane" => 10})
+    activity.add_participant({"Justine" => 20})
+
+    assert_equal [{"Jane" => 5 }, {"Justine" => -5}], activity.amount_off
+  end
 end

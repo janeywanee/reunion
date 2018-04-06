@@ -18,6 +18,14 @@ class Activity
   end
 
   def split_cost_evenly
-    total_cost / participants.length.to_f
+    total_cost / participants.length
+  end
+
+  def amount_off
+    participants.map do |participant|
+      name = participant.keys[0]
+      amount_off = split_cost_evenly - participant.values[0]
+      {name => amount_off}
+    end
   end
 end
