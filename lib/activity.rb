@@ -1,3 +1,4 @@
+require 'pry'
 class Activity
   attr_reader :activity_name, :participants
 
@@ -12,7 +13,11 @@ class Activity
 
   def total_cost
    participants.reduce(0) do | total, participant |
-     total + participant
+     total + participant.values[0]
    end
+  end
+
+  def split_cost_evenly
+    total_cost / participants.length.to_f
   end
 end
