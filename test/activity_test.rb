@@ -4,4 +4,30 @@ require 'minitest/pride'
 require './lib/activity'
 
 class ActivityTest < Minitest::Test
+
+  def test_it_exists
+    activity = Activity.new("hiking")
+
+    assert_instance_of Activity, activity
+  end
+
+  def test_it_has_a_activity_name
+    activity = Activity.new("hiking")
+
+    assert activity.activity_name
+  end
+
+  def test_it_starts_with_no_participants
+    activity = Activity.new("hiking")
+
+    assert_equal [], activity.participants
+  end
+
+  def test_it_can_add_participants
+    activity = Activity.new("hiking")
+
+    activity.add_participant({"Jane" => 10})
+    assert_equal [{"Jane" => 10}], activity.participants
+  end
+
 end
