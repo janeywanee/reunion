@@ -1,0 +1,4 @@
+1. learn how to use ruby syntax and style, be able to inherit between classes, testing, and methods. Also being able to read a speck.
+2. My code is breaking down everything into smaller pieces so it makes it easier to test and do everything piece by piece. Breaking everything pout into separate methods, so it makes it easier to understand and to have access between classes.
+3. My amount method in the activity class was the most difficult to me. It was difficult for me because I had to keep in mind that we were working with a hash and just working out how to use my other methods needed in this method.
+4. testing and figuring out how I would implement the math portion. The beginning parts as well were more simple for me, for instance adding participants and starting with an activity. 
